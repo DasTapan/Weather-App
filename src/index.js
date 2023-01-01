@@ -1,5 +1,5 @@
-import printName from "./a";
-import printAge from "./b";
+function print() {
+  console.log("Happy New Year");
+}
 
-printName();
-printAge();
+print();
