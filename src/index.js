@@ -1,9 +1,14 @@
-const input = document.querySelector("input[type='search']");
-console.log(input);
+import validateCity from "./sanitizer";
 
+const input = document.querySelector("input[type='search']");
 const btn = document.querySelector("button");
-console.log(btn);
 
 btn.addEventListener("click", () => {
-  console.log(input.value);
+  validateCity(input.value).then((result) => {
+    if (!result) console.log(`${input.value} not found`);
+    else {
+      console.log(`${input.value} found`);
+      console.log(result);
+    }
+  });
 });
