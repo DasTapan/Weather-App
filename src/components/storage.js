@@ -16,18 +16,12 @@ const storedWeather = {
 
   set data(newObj) {
     if (this.isEmpty(this.cityWeather)) {
-      // console.log("is empty");
-      // console.log("double check empty :", { ...this.cityWeather });
       Object.assign(this.cityWeather, newObj);
-      // console.log("empty obj after fill :", this.cityWeather);
     } else {
-      console.log("not empty");
-      // console.log("previous city :", { ...this.cityWeather });
       Object.keys(this.cityWeather).forEach((key) => {
         delete this.cityWeather[key];
       });
       Object.assign(this.cityWeather, newObj);
-      console.log("new city stored :", this.cityWeather);
     }
   },
 };
@@ -51,7 +45,7 @@ const weatherFactory = (
 
   const windSpeedKmHr = convertSpeed(windSpeed);
   const country = regionNamesInEnglish.of(countryCode);
-  // do slice from end
+  // do slice from end to get Time
   const sunrise = format(fromUnixTime(sunriseUtc), "do/MMM/yyyy hh:mmaa").slice(
     -7
   );

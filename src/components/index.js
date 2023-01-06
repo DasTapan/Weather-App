@@ -1,3 +1,4 @@
+import "./style.css";
 import validateCity from "./sanitizer";
 import getWeatherObj from "./messenger";
 

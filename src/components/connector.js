@@ -8,11 +8,9 @@ async function fetchData(cityString) {
     { mode: "cors" }
   );
   if (!cityResponse.ok) {
-    // console.log(`could not find ${cityString}`);
     return false;
   }
   const cityObj = await cityResponse.json();
-  // console.log(cityObj);
   store(cityObj);
   return cityObj;
 }
