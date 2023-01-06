@@ -1,3 +1,65 @@
-body {
-  background-color: greenyellow;
+/* UA reset begins */
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
+
+/**
+  * 1. Use the default cursor in all browsers (opinionated).
+  * 2. Change the line height in all browsers (opinionated).
+  * 3. Use a 4-space tab width in all browsers (opinionated).
+  */
+
+html {
+  cursor: default;
+  /* 1 */
+  line-height: 1.5;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  tab-size: 4;
+  /* 3 */
+}
+
+body {
+  margin: 0;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/* UA reset ends here */
+
+/* my style begins here */
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/background-img.jpg");
+  background-size: 100% 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.container > div {
+  border: 2px solid red;
+  height: 100%;
+  flex: 1;
+}
+
+.container > .left-box {
+  flex: 2;
+}
+/* my style ends here */
