@@ -61,6 +61,31 @@ body {
 
 .container > .left-box {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+}
+
+.left-box > div {
+  border: 2px solid greenyellow;
+}
+
+.left-box div:first-child {
+  height: 120px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.left-box div:nth-child(2) {
+  height: 50px;
+  width: 250px;
+  margin-bottom: 200px;
+}
+
+.left-box div:last-child {
+  height: 30px;
+  width: 60px;
 }
 
 .right-box {
