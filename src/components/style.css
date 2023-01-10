@@ -118,11 +118,37 @@ body {
   height: 40px;
   width: 250px;
   margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather.two > span:first-child {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.weather.two > span:nth-child(2) {
+  font-size: 1.7rem;
 }
 
 .weather.three {
   height: 50px;
   width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.weather.three span {
+  font-size: 2.6rem;
+}
+
+.weather.three > span:first-child {
+  margin-right: 2px;
+}
+
+.weather.three > span:nth-child(2) {
+  margin-right: 2px;
 }
 
 .right-box {
