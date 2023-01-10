@@ -176,6 +176,15 @@ body {
 
 .weather.three > span:nth-child(2) {
   margin-right: 2px;
+  color: #ff00ffe3;
+}
+
+.unit-c {
+  color: #ff0707f5;
+}
+
+.unit-f {
+  color: #2323ff;
 }
 
 .right-box {
@@ -229,6 +238,7 @@ form > input[type="search"] {
   top: 28px;
   right: 100px;
   height: 30px;
+  border-radius: 5px;
   width: clamp(220px, 17vw, 300px);
   font-size: 1rem;
   letter-spacing: 1px;
@@ -237,8 +247,8 @@ form > input[type="search"] {
 form > button {
   height: 60px;
   width: 60px;
-  /* padding: 10px; */
-  background-color: orange;
+  border-radius: 7px;
+  background-color: #f5aa1ff7;
   background-image: url("../assets/serach-icon.png");
   background-repeat: no-repeat;
   background-position: center;
