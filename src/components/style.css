@@ -177,22 +177,23 @@ body {
   display: flex;
   flex-direction: column;
   height: 500px;
+  padding-right: 30px;
 }
 
 .result {
   /* border: 2px solid orchid; */
   margin-bottom: 35px;
   /* height: 50px; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .result span {
-  background-color: red;
+  /* background-color: red; */
 }
 
 .result span:first-child {
-  margin-right: 10px;
-  width: 50px;
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
 }
 
 form {
