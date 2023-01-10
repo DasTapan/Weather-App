@@ -1,6 +1,7 @@
 import checkExistence from "./admin";
 
-function validateCity(city) {
+function validateCity(city, event) {
+  event.preventDefault();
   return checkExistence(city);
 }
 
