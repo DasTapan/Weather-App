@@ -58,6 +58,10 @@ body {
   margin: 0;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /**
  * Remove the inner padding in Chrome, Edge, and Safari on macOS.
  */
@@ -185,6 +189,11 @@ body {
 
 .unit-f {
   color: #2323ff;
+}
+
+.unit-c:hover,
+.unit-f:hover {
+  cursor: pointer;
 }
 
 .right-box {
