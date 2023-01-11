@@ -40,7 +40,7 @@ const weatherFactory = (
 ) => {
   const convertSpeed = (speedInMs) => {
     const speedInKmHr = (speedInMs * 18) / 5;
-    return Math.round(speedInKmHr * 100) / 100;
+    return Math.round(speedInKmHr * 10) / 10;
   };
 
   const windSpeedKmHr = convertSpeed(windSpeed);
@@ -53,9 +53,12 @@ const weatherFactory = (
     -7
   );
 
+  const cTemp = Math.round(currentTemp * 10) / 10;
+  const fTemp = Math.round(feelsLike * 10) / 10;
+
   return {
-    feelsLike,
-    currentTemp,
+    fTemp,
+    cTemp,
     windSpeedKmHr,
     humidity,
     cityName,

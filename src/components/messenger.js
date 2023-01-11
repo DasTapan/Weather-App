@@ -5,7 +5,7 @@ const dataBuffer = {
 
   makeCopy() {
     Object.keys(this.bufferObj).forEach((key) => delete this.bufferObj[key]);
-    this.bufferObj = { ...copyStoredCity() };
+    Object.assign(this.bufferObj, copyStoredCity());
   },
 };
 

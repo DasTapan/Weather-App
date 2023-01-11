@@ -1,6 +1,7 @@
 import "./style.css";
 import validateCity from "./sanitizer";
 import getWeatherObj from "./messenger";
+import render from "./render";
 
 const input = document.querySelector("input[type='search']");
 const btn = document.querySelector(".search-btn");
@@ -10,7 +11,8 @@ btn.addEventListener("click", (e) => {
     if (!result) console.log(`${input.value} not found`);
     else {
       console.log(`${input.value} found`);
-      console.log(`${input.value} weather: `, getWeatherObj());
+      // console.log(`${input.value} weather: `, getWeatherObj());
+      render({ ...getWeatherObj() });
     }
   });
 });
