@@ -11,15 +11,15 @@
     <div class="container">
       <div class="left-box">
         <div class="weather one">
-          <div class="temp">23&deg;</div>
-          <span class="city">Delhi</span>
+          <div class="temp"></div>
+          <span class="city"></span>
           <div class="icon">
             <div></div>
             <span>Rainy</span>
           </div>
         </div>
         <div class="weather two">
-          <span>Feels Like</span><span>18&deg;</span>
+          <span class="verbose"></span><span class="felt-temp"></span>
         </div>
         <div class="weather three">
           <span class="unit-c">C&deg;</span><span>|</span
@@ -34,11 +34,21 @@
           </form>
         </div>
         <div class="result-box">
-          <div class="result"><span>Weather :</span><span>Rain</span></div>
-          <div class="result"><span>Wind Speed :</span><span>20kmph</span></div>
-          <div class="result"><span>Humidity :</span><span>65%</span></div>
-          <div class="result"><span>Sunrise :</span><span>6:20AM</span></div>
-          <div class="result"><span>Sunset :</span><span>5:40PM</span></div>
+          <div class="result">
+            <span>Weather :</span><span id="main-weather"></span>
+          </div>
+          <div class="result">
+            <span>Wind Speed :</span><span id="wind-speed"></span>
+          </div>
+          <div class="result">
+            <span>Humidity :</span><span id="humidity"></span>
+          </div>
+          <div class="result">
+            <span>Sunrise :</span><span id="sunrise"></span>
+          </div>
+          <div class="result">
+            <span>Sunset :</span><span id="sunset"></span>
+          </div>
         </div>
       </div>
     </div>
