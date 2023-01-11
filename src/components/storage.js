@@ -34,6 +34,7 @@ const weatherFactory = (
   cityName,
   weather,
   weatherDescription,
+  icon,
   sunriseUtc,
   sunsetUtc,
   countryCode
@@ -64,6 +65,7 @@ const weatherFactory = (
     cityName,
     weather,
     weatherDescription,
+    icon,
     sunrise,
     sunset,
     country,
@@ -79,6 +81,7 @@ function store(obj) {
     obj.name,
     obj.weather[0].main,
     obj.weather[0].description,
+    obj.weather[0].icon,
     obj.sys.sunrise,
     obj.sys.sunset,
     obj.sys.country

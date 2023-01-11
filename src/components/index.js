@@ -11,7 +11,7 @@ btn.addEventListener("click", (e) => {
     if (!result) console.log(`${input.value} not found`);
     else {
       console.log(`${input.value} found`);
-      // console.log(`${input.value} weather: `, getWeatherObj());
+      console.log(`${input.value} weather: `, getWeatherObj());
       render({ ...getWeatherObj() });
     }
   });
