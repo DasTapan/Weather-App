@@ -132,7 +132,8 @@ body {
 .icon > div {
   height: 75%;
   width: 85%;
-  background-position: 50% 7%;
+  background-position: 50% 85%;
+  background-repeat: no-repeat;
   margin: 0 auto;
 }
 
