@@ -5,6 +5,7 @@ import render from "./render";
 
 const input = document.querySelector("input[type='search']");
 const btn = document.querySelector(".search-btn");
+const errorSpan = document.querySelector(".error-box");
 
 // validateCity("Puri").then(render({ ...getWeatherObj() }));
 
@@ -20,11 +21,14 @@ async function defaultCityLoad() {
 defaultCityLoad();
 
 btn.addEventListener("click", (e) => {
+  errorSpan.classList.remove("error-msg");
+  errorSpan.textContent = "";
   validateCity(input.value, e).then((result) => {
-    if (!result) console.log(`${input.value} not found`);
-    else {
-      // console.log(`${input.value} found`);
-      // console.log(`${input.value} weather: `, getWeatherObj());
+    if (!result) {
+      console.log(`${input.value} not found`);
+      errorSpan.classList.add("error-msg");
+      errorSpan.textContent = `${input.value} does not exist !`;
+    } else {
       render({ ...getWeatherObj() });
     }
   });

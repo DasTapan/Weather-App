@@ -232,4 +232,16 @@ form > button {
   background-position: center;
 }
 
+.error-msg {
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+  padding: 3px 5px;
+  position: absolute;
+  left: -250px;
+  top: 60px;
+  background-color: gainsboro;
+  color: red;
+}
+
 /* my style ends here */
