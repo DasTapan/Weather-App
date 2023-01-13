@@ -10,8 +10,8 @@ btn.addEventListener("click", (e) => {
   validateCity(input.value, e).then((result) => {
     if (!result) console.log(`${input.value} not found`);
     else {
-      console.log(`${input.value} found`);
-      console.log(`${input.value} weather: `, getWeatherObj());
+      // console.log(`${input.value} found`);
+      // console.log(`${input.value} weather: `, getWeatherObj());
       render({ ...getWeatherObj() });
     }
   });

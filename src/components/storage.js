@@ -1,5 +1,7 @@
 import fromUnixTime from "date-fns/fromUnixTime";
 import format from "date-fns/format";
+import add from "date-fns/add";
+import sub from "date-fns/sub";
 
 const regionNamesInEnglish = new Intl.DisplayNames(["en"], { type: "region" });
 
@@ -37,22 +39,47 @@ const weatherFactory = (
   icon,
   sunriseUtc,
   sunsetUtc,
-  countryCode
+  countryCode,
+  tzOffset
 ) => {
   const convertSpeed = (speedInMs) => {
     const speedInKmHr = (speedInMs * 18) / 5;
     return Math.round(speedInKmHr * 10) / 10;
   };
 
+  const toResultCountryTime = (utcTimestamp) => {
+    const userTimeZone = new Date();
+    let resultCountryDate;
+    // multiplied by -1 as the method returns -120 for UTC+2:00
+    const userOffsetSeconds = userTimeZone.getTimezoneOffset() * 60 * -1;
+
+    if (userOffsetSeconds === tzOffset)
+      resultCountryDate = fromUnixTime(utcTimestamp);
+    if (userOffsetSeconds > tzOffset) {
+      const diff = userOffsetSeconds - tzOffset;
+      const userDate = fromUnixTime(utcTimestamp);
+      resultCountryDate = sub(userDate, { seconds: diff });
+    }
+    if (tzOffset > userOffsetSeconds) {
+      const diff = tzOffset - userOffsetSeconds;
+      const userDate = fromUnixTime(utcTimestamp);
+      resultCountryDate = add(userDate, { seconds: diff });
+    }
+    return resultCountryDate;
+  };
+
   const windSpeedKmHr = convertSpeed(windSpeed);
   const country = regionNamesInEnglish.of(countryCode);
+
   // do slice from end to get Time
-  const sunrise = format(fromUnixTime(sunriseUtc), "do/MMM/yyyy hh:mmaa").slice(
-    -7
-  );
-  const sunset = format(fromUnixTime(sunsetUtc), "do/MMM/yyyy hh:mmaa").slice(
-    -7
-  );
+  const sunrise = format(
+    toResultCountryTime(sunriseUtc),
+    "do/MMM/yyyy hh:mmaa"
+  ).slice(-7);
+  const sunset = format(
+    toResultCountryTime(sunsetUtc),
+    "do/MMM/yyyy hh:mmaa"
+  ).slice(-7);
 
   const cTemp = Math.round(currentTemp * 10) / 10;
   const fTemp = Math.round(feelsLike * 10) / 10;
@@ -84,7 +111,8 @@ function store(obj) {
     obj.weather[0].icon,
     obj.sys.sunrise,
     obj.sys.sunset,
-    obj.sys.country
+    obj.sys.country,
+    obj.timezone
   );
 }
 
