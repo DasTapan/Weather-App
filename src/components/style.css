@@ -117,6 +117,7 @@ body {
 
 .temp {
   font-size: 7rem;
+  margin-right: 30px;
 }
 
 .city {
@@ -162,39 +163,6 @@ body {
 
 .weather.two > span:nth-child(2) {
   font-size: 1.7rem;
-}
-
-.weather.three {
-  height: 50px;
-  width: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.weather.three span {
-  font-size: 2.6rem;
-}
-
-.weather.three > span:first-child {
-  margin-right: 2px;
-}
-
-.weather.three > span:nth-child(2) {
-  margin-right: 2px;
-  color: #ff00ffe3;
-}
-
-.unit-c {
-  color: #ff0707f5;
-}
-
-.unit-f {
-  color: #2323ff;
-}
-
-.unit-c:hover,
-.unit-f:hover {
-  cursor: pointer;
 }
 
 .right-box {

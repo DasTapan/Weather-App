@@ -88,11 +88,11 @@ function clean() {
 
 function render(weatherObj) {
   clean();
-  currentTemp.textContent = `${weatherObj.cTemp}\xB0`;
+  currentTemp.textContent = `${weatherObj.cTemp}\xB0c`;
   city.textContent = weatherObj.cityName;
   setWeatherIcon(weatherObj.icon);
   verboseSpan.textContent = "Feels Like";
-  feltTemp.textContent = `${weatherObj.fTemp}\xB0`;
+  feltTemp.textContent = `${weatherObj.fTemp}\xB0C`;
   mainWeather.textContent = weatherObj.weather;
   weatherDescription.textContent = weatherObj.weatherDescription;
   windSpeed.textContent = `${weatherObj.windSpeedKmHr} km/hr`;
