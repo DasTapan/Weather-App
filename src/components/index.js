@@ -1,8 +1,11 @@
 import "./style.css";
+import favicon from "../assets/favicon.png";
 import validateCity from "./sanitizer";
 import getWeatherObj from "./messenger";
 import render from "./render";
 
+const head = document.querySelector("head");
+const link = document.createElement("link");
 const input = document.querySelector("input[type='search']");
 const btn = document.querySelector(".search-btn");
 const errorSpan = document.querySelector(".error-box");
@@ -12,6 +15,11 @@ const errorSpan = document.querySelector(".error-box");
 // validateCity("Puri").then((result) => {
 //   render({ ...getWeatherObj() });
 // });
+
+link.setAttribute("rel", "shortcut icon");
+link.setAttribute("type", "image/x-icon");
+link.setAttribute("href", favicon);
+head.appendChild(link);
 
 async function defaultCityLoad() {
   await validateCity("Puri");
