@@ -8,7 +8,7 @@ const head = document.querySelector("head");
 const link = document.createElement("link");
 const input = document.querySelector("input[type='search']");
 const btn = document.querySelector(".search-btn");
-const errorSpan = document.querySelector(".error-box");
+const validationSpan = document.querySelector(".validation");
 
 // validateCity("Puri").then(render({ ...getWeatherObj() }));
 
@@ -28,16 +28,27 @@ async function defaultCityLoad() {
 
 defaultCityLoad();
 
+input.addEventListener("input", () => {
+  if (input.validity.patternMismatch) {
+    validationSpan.textContent = "Not a real city";
+    validationSpan.classList.add("not-valid");
+  }
+  if (!input.validity.patternMismatch) {
+    validationSpan.textContent = "";
+    validationSpan.classList.remove("not-valid");
+  }
+});
+
 btn.addEventListener("click", (e) => {
-  errorSpan.classList.remove("error-msg");
-  errorSpan.textContent = "";
-  validateCity(input.value, e).then((result) => {
-    if (!result) {
-      console.log(`${input.value} not found`);
-      errorSpan.classList.add("error-msg");
-      errorSpan.textContent = `${input.value} does not exist !`;
-    } else {
-      render({ ...getWeatherObj() });
-    }
-  });
+  if (input.validity.valueMissing) {
+    input.setCustomValidity("we demand data");
+  } else {
+    validateCity(input.value, e).then((result) => {
+      if (!result) {
+        console.log(`${input.value} not found`);
+      } else {
+        render({ ...getWeatherObj() });
+      }
+    });
+  }
 });

@@ -1,7 +1,7 @@
 import checkExistence from "./admin";
 
 function validateCity(city, event) {
-  // for default city on page load
+  // default city data to load on page at the beginning
   if (event) {
     event.preventDefault();
   }

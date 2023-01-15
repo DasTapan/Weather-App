@@ -11,7 +11,7 @@ async function fetchData(cityString) {
     return false;
   }
   const cityObj = await cityResponse.json();
-  console.log(cityObj);
+  // console.log(cityObj);
   store(cityObj);
   return cityObj;
 }

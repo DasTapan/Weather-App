@@ -108,7 +108,6 @@ body {
 
 .weather.one {
   height: 100px;
-  /* width: 500px; */
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -192,19 +191,9 @@ body {
 }
 
 .result {
-  /* border: 2px solid orchid; */
   margin-bottom: 35px;
-  /* height: 50px; */
   display: flex;
   justify-content: space-between;
-}
-
-.result span {
-  /* background-color: red; */
-}
-
-.result span:first-child {
-  /* background-color: cornflowerblue; */
 }
 
 form {
